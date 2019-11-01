@@ -76,12 +76,12 @@ def calc_iou(pred,label,n_class=20):
 
 #====================================================================================
 # prepare test data
-n_class = 5
+n_class = 20
 
-w = 1
-h = 10
+w = 100
+h = 1
 
-x = (np.random.random([1,n_class,1,3])*10).astype(np.float)
+x = (np.random.random([1,n_class,100,1])*10).astype(np.float)
 y = (np.random.random([1,w,h])*10).astype(np.int)
 
 x = torch.from_numpy(x)
