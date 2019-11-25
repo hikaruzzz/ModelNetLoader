@@ -8,6 +8,7 @@ from torch.utils.data import Dataset
 from mpl_toolkits.mplot3d import Axes3D
 
 warnings.filterwarnings('ignore')
+class_label = ['airplane','bathtub','bed','bench','bookshelf','bottle','bowl','car','chair','cone','cup','curtain','desk','door','dresser','flower_pot','glass_box','guitar','keyboard','lamp','laptop','mantel','monitor','night_stand','person','piano','plant','radio','range_hood','sink','sofa','stairs','stool','table','tent','toilet','tv_stand','vase','wardrobe','xbox']
 
 
 def load_h5(h5_filename):
@@ -106,8 +107,8 @@ def visible_modelnet(points, labels,is_show=True):
                s=2,
                marker=".")
     ax.axis('scaled')  # {equal, scaled}
-    plt.title(str(labels))
-    print(labels)
+    plt.title(class_label[labels])
+    # print(labels)
 
     if is_show:
         plt.show()
